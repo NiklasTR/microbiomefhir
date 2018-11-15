@@ -1,0 +1,35 @@
+---
+title: "Microbiome Example"
+author: "Niklas Rindtorff"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{Title of your vignette}
+  %\usepackage[UTF-8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
+```{r}
+suppressPackageStartupMessages(library(curatedMetagenomicData))
+loman.eset = LomanNJ_2013.metaphlan_bugs_list.stool()
+```
+
+```{r}
+experimentData(loman.eset)
+```
+
+```{r}
+head( pData( loman.eset ) )
+```
+
+```{r}
+
+```
+
