@@ -1,0 +1,24 @@
+---
+title: "Reference Values"
+author: "Niklas Rindtorff"
+date: "11/28/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+```{r}
+library(phyloseq)
+library()
+```
+
+
+```{r}
+loman.eset2 = curatedMetagenomicData("LomanNJ_2013.metaphlan_bugs_list.stool",
+                                     counts = TRUE, dryrun = FALSE)[[1]]
+```
+
