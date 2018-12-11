@@ -1,4 +1,4 @@
-microbiomfhir - turn a patient’s microbiome OTU data into FHIR
+microbiomeFHIR - turn a patient’s microbiome OTU data into FHIR
 ==============================================================
 
 ``` r
