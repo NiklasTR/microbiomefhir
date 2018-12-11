@@ -1,0 +1,57 @@
+---
+title: "microbiomfhir - turn a patient's microbiome OTU data into FHIR"
+output: html_notebook
+---
+
+```{r}
+library(microbiomefhir)
+library(tidyverse)
+```
+
+The microbiomfhir package allows the conversion of a patient's OTU table into a structured FHIR DiagnosticReport. At this point the package only supports the import of [phyloseq](https://joey711.github.io/phyloseq/) objects. 
+
+# Planned features
+
+* integrate SNOMED API calls to code for bacterial species
+* integrate PROCEDURE ressource to annotate more experiment related information 
+
+# Installation Instructions
+
+The package is currenlty available via GitHub
+
+```{r,eval = FALSE}
+devtools::install_github("https://github.com/NiklasTR/microbiomefhir")
+```
+
+The package has, among others, the following requirements: 
+
+* tidyverse toolbox
+* phyloseq
+* curatedMetagenomicData
+
+# Example
+
+Let's use the package's built-in function to collect an example from Levi Waldron's excellent curated Metagenomic Data [ressource](http://waldronlab.io/curatedMetagenomicData/).
+
+```{r, message=FALSE, warning=FALSE}
+pseq <- load_example()
+```
+
+Here is a glimpse at one of the OTU table profiles. We can see the patient identifier as the column name. Each row represents a taxonomic unit (from kingdom - Bacteria down to many species). 
+
+```{r}
+otu_table(pseq)[,1] %>% head()
+```
+
+We can simply export the patient's OTU table into a FHIR DiagnosticReport:
+
+```{r}
+parse_json(pseq, file = here("output/my_first_microbiome_fhir_report.json"))
+```
+
+We can take a closer look at out output JSON file.
+
+```{r}
+readLines(here("output/my_first_microbiome_fhir_report.json"), 100)
+```
+

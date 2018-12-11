@@ -1,8 +1,8 @@
-Package: mirobiomefhir
+Package: microbiomefhir
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Niklas", "Rindtorff", email = "niklas_rindtorff@hms.harvard.edu", role = c("aut", "cre"))
+Description: Turn your favorite microbiome results into a FHIR JSON.
 Depends: R (>= 3.0)
 License: GPL-3
 Encoding: UTF-8

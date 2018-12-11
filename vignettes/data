@@ -1,0 +1,1 @@
+[{"resourceType":"Observation","id":"k__Bacteria","valueQuantity.value":97.4673,"status":"final","subject.display":"Roel","issued":"2019-08-16 07:03:00","valueCodeableConcept.coding.system":"http://snomed.info/sct","valueCodeableConcept.coding.display":"Bacteria","valueQuantity":"%"}]

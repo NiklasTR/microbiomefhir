@@ -1,0 +1,24 @@
+[
+  {
+    "resourceType": "Observation",
+    "id": "k__Bacteria",
+    "status": "final",
+    "subject": {
+      "display": "Roel"
+    },
+    "issued": "2019-08-16 07:03:00",
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "display": "Bacteria"
+        }
+      ]
+    },
+    "valueQuantity": {
+      "value": 97.4673,
+      "unit": "percent",
+      "code": "%"
+    }
+  }
+]

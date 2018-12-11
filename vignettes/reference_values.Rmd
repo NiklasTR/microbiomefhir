@@ -10,15 +10,84 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
+I load required packages. 
 
 ```{r}
 library(phyloseq)
-library()
+library(curatedMetagenomicData)
+```
+
+I download all microbiome datasets publicly available from the curated metagenomics.
+
+```{r, message=FALSE, eval=FALSE}
+list_datasets = curatedMetagenomicData()[grep("metaphlan_bugs_list.stool",curatedMetagenomicData())]
+data = curatedMetagenomicData(x=list_datasets,dryrun=FALSE)
+save(data,file="microbiome_data.RData")
+```
+
+```{r}
+load("microbiome_data.RData")
+```
+
+I convert the standardized experiment format into a phyloseq object.
+
+```{r}
+pseq = data %>% 
+  mergeData(.) %>% 
+  ExpressionSet2phyloseq(.)
+```
+
+
+
+```{r}
+pseq
 ```
 
 
 ```{r}
-loman.eset2 = curatedMetagenomicData("LomanNJ_2013.metaphlan_bugs_list.stool",
-                                     counts = TRUE, dryrun = FALSE)[[1]]
+otu_table(pseq)[1:20, 1]
+```
+
+
+```{r}
+sample_data(pseq) %>%
+  tibble::rownames_to_column("id") %>%
+  filter(body_site == "stool" & age_category == "adult", disease == "healthy")
+```
+
+~ 1800 patients for reference
+
+```{r}
+otu_table(pseq)[1:120, 1:5] %>% as.data.frame()
+```
+
+
+```{r}
+otu <- otu_table(pseq) %>% rownames()
+tibble(otu) %>% separate(otu, c("category", "name"), sep = "__") %>% 
+  mutate(category = factor(category) %>% fct_inorder()) %>%
+  count(category)
+```
+
+```{r}
+tibble(otu) %>% separate(otu, c("category", "name"), sep = "__") %>% 
+  mutate(category = factor(category) %>% fct_inorder())
+```
+
+```{r}
+keepotu = genefilter_sample(pseq, filterfun_sample(topp(0.05)), A=sample_data(pseq) %>% nrow()/100)
+subset_taxa(pseq, keepotu)
+```
+
+```{r}
+plot_richness(pseq, 
+              "disease_class", 
+              measures = "Simpson", 
+              sortby="Simpson") + 
+    geom_violin()
+```
+
+```{r}
+beta = distance(pseq, method="bray")
 ```
 
