@@ -10,7 +10,7 @@ library(phyloseq)
 library(here)
 ```
 
-DISCLAIMER: This is an alpha build
+DISCLAIMER: This is an alpha build, 
 
 The microbiomfhir package allows the conversion of a patient’s OTU table
 into a structured FHIR DiagnosticReport. At this point the package only
@@ -23,6 +23,8 @@ Planned features
 -   integrate SNOMED API calls to code for bacterial species
 -   integrate PROCEDURE ressource to annotate more experiment related
     information
+-   change patient and sample submission details    
+-   process multiple profiles into separate reports     
 
 Installation Instructions
 -------------------------
