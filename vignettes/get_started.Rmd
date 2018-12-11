@@ -1,6 +1,8 @@
 ---
 title: "microbiomfhir - turn a patient's microbiome OTU data into FHIR"
-output: github_document
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 ```{r, message=FALSE, warning=FALSE}
