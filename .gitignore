@@ -4,3 +4,12 @@
 .Ruserdata
 .httr-oauth
 .DS_Store
+vignettes/create_fhir.Rmd
+nightly/create_fhir.Rmd
+nightly/microbiome_data.RData
+nightly/microbiome_example.Rmd
+nightly/my_first_microbiome_fhir_report.json
+nightly/r_on_fihr_demo.Rmd
+nightly/reference_values.Rmd
+nightly/test.json
+nightly/test_bind.json
