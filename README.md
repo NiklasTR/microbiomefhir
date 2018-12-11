@@ -1,3 +1,6 @@
+microbiomfhir - turn a patient’s microbiome OTU data into FHIR
+==============================================================
+
 ``` r
 library(microbiomefhir)
 
@@ -13,14 +16,14 @@ supports the import of [phyloseq](https://joey711.github.io/phyloseq/)
 objects.
 
 Planned features
-================
+----------------
 
 -   integrate SNOMED API calls to code for bacterial species
 -   integrate PROCEDURE ressource to annotate more experiment related
     information
 
 Installation Instructions
-=========================
+-------------------------
 
 The package is currenlty available via GitHub
 
@@ -35,7 +38,7 @@ The package has, among others, the following requirements:
 -   curatedMetagenomicData
 
 Example
-=======
+-------
 
 Let’s use the package’s built-in function to collect an example from
 Levi Waldron’s excellent curated Metagenomic Data
