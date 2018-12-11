@@ -10,6 +10,8 @@ library(phyloseq)
 library(here)
 ```
 
+DISCLAIMER: This is an alpha build
+
 The microbiomfhir package allows the conversion of a patient’s OTU table
 into a structured FHIR DiagnosticReport. At this point the package only
 supports the import of [phyloseq](https://joey711.github.io/phyloseq/)
