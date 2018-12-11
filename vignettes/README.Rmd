@@ -64,6 +64,8 @@ Without more data, the function currenlty makes multiple assumptions
 * The patient's name is Roel
 * The sample submission time is in the future
 * There is no LOINC code for 16S Sequencing
+* The sample type is assumed to be a stool sample
+
 
 ```{r}
 readLines(here("output/my_first_microbiome_fhir_report.json"), 150)
