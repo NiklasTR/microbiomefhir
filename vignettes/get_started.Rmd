@@ -5,7 +5,7 @@ output:
     variant: markdown_github
 ---
 
-# microbiomfhir - turn a patient's microbiome OTU data into FHIR
+# microbiomeFHIR - turn a patient's microbiome OTU data into FHIR
 
 ```{r, message=FALSE, warning=FALSE}
 library(microbiomefhir)
@@ -60,6 +60,6 @@ parse_json(pseq, file = here("output/my_first_microbiome_fhir_report.json"))
 We can take a closer look at out output JSON file.
 
 ```{r}
-readLines(here("output/my_first_microbiome_fhir_report.json"), 100)
+readLines(here("output/my_first_microbiome_fhir_report.json"), 150)
 ```
 

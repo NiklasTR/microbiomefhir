@@ -1,4 +1,4 @@
-microbiomeFHIR - turn a patient’s microbiome OTU data into FHIR
+microbiomfhir - turn a patient’s microbiome OTU data into FHIR
 ==============================================================
 
 ``` r
@@ -76,7 +76,7 @@ parse_json(pseq, file = here("output/my_first_microbiome_fhir_report.json"))
 We can take a closer look at out output JSON file.
 
 ``` r
-readLines(here("output/my_first_microbiome_fhir_report.json"), 100)
+readLines(here("output/my_first_microbiome_fhir_report.json"), 150)
 ```
 
     ##   [1] "{"                                                                         
@@ -178,4 +178,54 @@ readLines(here("output/my_first_microbiome_fhir_report.json"), 100)
     ##  [97] "        \"status\": \"final\","                                            
     ##  [98] "        \"subject\": {"                                                    
     ##  [99] "          \"display\": \"Roel\""                                           
-    ## [100] "        },"
+    ## [100] "        },"                                                                
+    ## [101] "        \"issued\": \"2019-08-16 07:03:00\","                              
+    ## [102] "        \"valueCodeableConcept\": {"                                       
+    ## [103] "          \"coding\": ["                                                   
+    ## [104] "            {"                                                             
+    ## [105] "              \"system\": \"http://snomed.info/sct\","                     
+    ## [106] "              \"display\": \"Bacteroidetes\""                              
+    ## [107] "            }"                                                             
+    ## [108] "          ]"                                                               
+    ## [109] "        },"                                                                
+    ## [110] "        \"valueQuantity\": {"                                              
+    ## [111] "          \"value\": 83.5566,"                                             
+    ## [112] "          \"unit\": \"percent\","                                          
+    ## [113] "          \"code\": \"%\""                                                 
+    ## [114] "        }"                                                                 
+    ## [115] "      }"                                                                   
+    ## [116] "    ],"                                                                    
+    ## [117] "    \"14\": ["                                                             
+    ## [118] "      {"                                                                   
+    ## [119] "        \"resourceType\": \"Observation\","                                
+    ## [120] "        \"id\": \"p__Firmicutes\","                                        
+    ## [121] "        \"status\": \"final\","                                            
+    ## [122] "        \"subject\": {"                                                    
+    ## [123] "          \"display\": \"Roel\""                                           
+    ## [124] "        },"                                                                
+    ## [125] "        \"issued\": \"2019-08-16 07:03:00\","                              
+    ## [126] "        \"valueCodeableConcept\": {"                                       
+    ## [127] "          \"coding\": ["                                                   
+    ## [128] "            {"                                                             
+    ## [129] "              \"system\": \"http://snomed.info/sct\","                     
+    ## [130] "              \"display\": \"Firmicutes\""                                 
+    ## [131] "            }"                                                             
+    ## [132] "          ]"                                                               
+    ## [133] "        },"                                                                
+    ## [134] "        \"valueQuantity\": {"                                              
+    ## [135] "          \"value\": 15.1482,"                                             
+    ## [136] "          \"unit\": \"percent\","                                          
+    ## [137] "          \"code\": \"%\""                                                 
+    ## [138] "        }"                                                                 
+    ## [139] "      }"                                                                   
+    ## [140] "    ],"                                                                    
+    ## [141] "    \"15\": ["                                                             
+    ## [142] "      {"                                                                   
+    ## [143] "        \"resourceType\": \"Observation\","                                
+    ## [144] "        \"id\": \"p__Proteobacteria\","                                    
+    ## [145] "        \"status\": \"final\","                                            
+    ## [146] "        \"subject\": {"                                                    
+    ## [147] "          \"display\": \"Roel\""                                           
+    ## [148] "        },"                                                                
+    ## [149] "        \"issued\": \"2019-08-16 07:03:00\","                              
+    ## [150] "        \"valueCodeableConcept\": {"
