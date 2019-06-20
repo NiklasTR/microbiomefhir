@@ -48,7 +48,7 @@ pseq <- load_example()
 Here is a glimpse at one of the OTU table profiles. We can see the patient identifier as the column name. Each row represents a taxonomic unit (from kingdom - Bacteria down to many species). 
 
 ```{r}
-otu_table(pseq)[,1] %>% head()
+otu_table(pseq)[,1] %>% head(30)
 ```
 
 We can simply export the patient's OTU table into a FHIR DiagnosticReport:
